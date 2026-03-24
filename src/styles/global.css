@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    /* Breakpoints */
+--breakpoint-tablet: 991px;
+
+  /* Color System */
+  --color-primary: rgba(102, 126, 234, 1);
+  --color-secondary: rgba(255, 183, 77, 1);
+  --color-accent: rgba(255, 130, 130, 1);
+
+  --color-surface-primary: rgba(204, 213, 174, 1);
+  --color-surface-secondary: rgba(250, 237, 205, 1);
+  --color-surface-light: rgba(212, 163, 115, 1);
+
+  --color-text-primary: rgba(34, 34, 34, 1);
+  --color-text-secondary: rgba(117, 117, 117, 1);
+  --color-border: rgba(200, 200, 200, 1);
+
+  /* Border Radius */
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 8px;
+
+  /* Spacing */
+  --spacing-gap: 1em;
+  --spacing-section-padding: calc(3.5em + (var(--spacing-gap) * 2));
+  --spacing-container-padding: 2em;
+  --spacing-header-height: calc(1em + (var(--spacing-gap) * 2));
+  --spacing-footer-height: calc(2.785em + (var(--spacing-gap) * 2));
+
+  /* Fonts */
+  --text-size-font: calc(
+    var(--spacing-size-container) /
+      (var(--spacing-size-container-ideal) / var(--spacing-size-unit))
+  );
+  --font-sans: "Nata Sans", "sans-serif";
+}
+
+
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  :root {
+    --spacing-container-padding: 1.5em;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  :root {
+    --spacing-container-padding: 1em;
+    --spacing-section-padding: calc(var(--spacing-gap) *);
+  }
+}
+
+:root {
+  --spacing-size-unit: 16; /* body font-size in design - no px */
+  --spacing-size-container-ideal: 1440; /* screen-size in design - no px */
+  --spacing-size-container-min: 992px;
+  --spacing-size-container-max: 1920px;
+  --spacing-size-container: clamp(
+    var(--spacing-size-container-min),
+    100vw,
+    var(--spacing-size-container-max)
+  );
+}
+
+/* Tablet */
+@media screen and (max-width: 991px) {
+  :root {
+    --spacing-size-container-ideal: 834; /* screen-size in design - no px */
+    --spacing-size-container-min: 768px;
+    --spacing-size-container-max: 991px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 767px) {
+  :root {
+    --spacing-size-container-ideal: 390; /* screen-size in design - no px */
+    --spacing-size-container-min: 480px;
+    --spacing-size-container-max: 767px;
+  }
+}
+/* Mobile Portrait */
+@media screen and (max-width: 479px) {
+  :root {
+    --spacing-size-container-ideal: 440; /* screen-size in design - no px */
+    --spacing-size-container-min: 0px;
+    --spacing-size-container-max: 479px;
+  }
+}
+
+.container {
+  z-index: 1;
+  max-width: var(--spacing-size-container);
+  padding-left: var(--spacing-container-padding);
+  padding-right: var(--spacing-container-padding);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.container.is--full {
+  max-width: 100%;
+}
+
+.container.is--medium {
+  max-width: calc(var(--spacing-size-container) * 0.85);
+}
+
+.container.is--small {
+  max-width: calc(var(--spacing-size-container) * 0.7);
+}
+
+@media screen and (max-width: 991px) {
+  .container.is--medium,
+  .container.is--small {
+    max-width: calc(var(--size-container) * 1);
+  }
+}
+
+/* Typography Styling */
+
+h1 {
+  font-size: 8em; /* 75px */
+  line-height: 1; /* 112px */
+}
+
+h2 {
+  font-size: 3.5em; /* 56px */
+  line-height: 1; /* 84px */
+}
+
+h3 {
+  font-size: 2.625em; /* 42px */
+  line-height: 1; /* 63px */
+}
+
+h4 {
+  font-size: 2em; /* 32px */
+  line-height: 1.5em; /* 48px */
+}
+
+h5 {
+  font-size: 1.5em; /* 24px */
+  line-height: 1.5em; /* 36px */
+}
+
+h6 {
+  font-size: 1.25em; /* 20px */
+  line-height: 1.5em; /* 30px */
+}
+
+p {
+  font-size: 1em; /* 16px */
+  line-height: 1.5em; /* 24px */
+}
+
+a {
+  font-size: 1.125em; /* 16px */
+  line-height: 1.5em; /* 24px */
+}
+
+span {
+  font-size: 1em; /* 16px */
+  line-height: 1.5em; /* 24px */
+}
+
+/* Mobile Typography (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 4em; /* 48px */
+    line-height: 1; /* 64px */
+  }
+
+  h2 {
+    font-size: 2.25em; /* 36px */
+    line-height: 1; /* 54px */
+  }
+
+  h3 {
+    font-size: 1.75em; /* 28px */
+    line-height: 1; /* 42px */
+  }
+
+  h4 {
+    font-size: 1.5em; /* 24px */
+    line-height: 1.5em; /* 36px */
+  }
+
+  h5 {
+    font-size: 1.25em; /* 20px */
+    line-height: 1.5em; /* 30px */
+  }
+
+  h6 {
+    font-size: 1.125em; /* 18px */
+    line-height: 1.5em; /* 27px */
+  }
+
+  p,
+  a,
+  span {
+    font-size: 1.125em; /* 14px */
+    line-height: 1.5em; /* 21px */
+  }
+}
