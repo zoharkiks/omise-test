@@ -37,6 +37,9 @@
       (var(--spacing-size-container-ideal) / var(--spacing-size-unit))
   );
   --font-sans: "Nata Sans", "sans-serif";
+
+  --color-success: #10b981;
+  --color-success-hover: #059669;
 }
 
 
@@ -209,4 +212,16 @@ span {
     font-size: 1.125em; /* 14px */
     line-height: 1.5em; /* 21px */
   }
+}
+
+.product-card {
+  @apply bg-white rounded-lg overflow-hidden border border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.btn-buy {
+  @apply bg-primary text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:opacity-90 inline-block text-center;
+}
+
+.glass-morphism {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
 }
