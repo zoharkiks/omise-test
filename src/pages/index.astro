@@ -250,7 +250,12 @@ const public_key = import.meta.env.PUBLIC_OMISE_PUBLIC_KEY;
                         let payload = { 
                             amount: 850000, 
                             email: values[1], 
-                            metadata: { shipping_name: values[0], shipping_address: values[2], shipping_phone: values[3] } 
+                            metadata: { 
+                                shipping_name: values[0], 
+                                shipping_email: values[1],
+                                shipping_address: values[2], 
+                                shipping_phone: values[3] 
+                            } 
                         };
                         if (nonce.startsWith("tokn_")) payload.token = nonce; else payload.source = nonce;
 

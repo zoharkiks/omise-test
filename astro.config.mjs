@@ -8,6 +8,9 @@ export default defineConfig({
   output: "server",
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: [".ngrok-free.app"]
+    }
   },
 
   adapter: vercel(),
